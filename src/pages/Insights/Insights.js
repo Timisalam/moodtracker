@@ -96,14 +96,14 @@ export default function Insights() {
         console.log(predictedMood);
         if (accuracy >= .75) {
             if (predictedMood === 0) {
-                feedbackMessage = "Our analysis suggests that your current average habits might lead to a lower mood. ";
+                feedbackMessage = "Our analysis suggests that your current average screentime and sleep quality might lead to a lower mood. ";
                 if (badCount > goodCount) {
                     feedbackMessage += " In addition, your habits today seem worse than your usual average. Consider reducing your screentime and improving your sleep quality to help boost your mood. ";
                 } else {
                     feedbackMessage += " However, it's great to see that today's habits are better than your average! Keep up the improvements to help lift your mood further. ";
                 }
             } else {
-                feedbackMessage = "Our analysis suggests that your current average habits means you're likely to have a good mood! ";
+                feedbackMessage = "Our analysis suggests that your current average screentime and sleep quality means you're likely to have a good mood! ";
                 if (goodCount > badCount) {
                     feedbackMessage += " Your habits today are better than usual, which is excellent! Keep up the good work!. ";
                 } else {
