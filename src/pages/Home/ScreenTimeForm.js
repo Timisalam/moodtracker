@@ -7,7 +7,6 @@ export default function ScreenTimeForm({ uid }) {
     const [amount, setAmount] = useState("");
     const [selectedEmojis, setSelectedEmojis] = useState({
         positive: null,
-        negative: null,
         sleep: null
     }); 
     const [hasSubmittedToday, setHasSubmittedToday] = useState(false);
@@ -27,14 +26,8 @@ export default function ScreenTimeForm({ uid }) {
         { id: 4, symbol: "😊", label: "Good" },
         { id: 5, symbol: "😄", label: "Great" },
     ];
-    const negativeEmojis = [
-        { id: 1, symbol: "😄", label: "Great" },
-        { id: 2, symbol: "😊", label: "Good" },
-        { id: 3, symbol: "😐", label: "Okay" },
-        { id: 4, symbol: "😟", label: "Bad" },
-        { id: 5, symbol: "😢", label: "Terrible" },
-
-    ];
+  
+    
     //IMPROVE THIS FUNCTION
     const isValidDocument = () =>{
         const todaysDate = new Date();
@@ -54,13 +47,6 @@ export default function ScreenTimeForm({ uid }) {
         }));
     };
     
-    const handleNegativeSelect = (emoji) => {
-        setSelectedEmojis((prev) => ({
-            ...prev,
-            negative: prev.negative?.id === emoji.id ? null : emoji
-        }));
-    };
-    
     const handleSleepSelect = (emoji) => {
         setSelectedEmojis((prev) => ({
             ...prev,
@@ -74,7 +60,6 @@ export default function ScreenTimeForm({ uid }) {
             addDocument({
                 amount,
                 positiveActivation:selectedEmojis.positive.id,
-                negativeActivation: selectedEmojis.negative.id,
                 sleepQuality: selectedEmojis.sleep.id, 
                 uid,
             });
@@ -125,28 +110,6 @@ export default function ScreenTimeForm({ uid }) {
                                 border: selectedEmojis.positive?.id === emoji.id ? "2px solid blue" : "1px solid gray",
                                 borderRadius: "50%",
                                 background: selectedEmojis.positive?.id === emoji.id ? "#e0f7fa" : "#fff",
-                                cursor: "pointer",
-                            }}
-                            aria-label={emoji.label}
-                        >
-                            {emoji.symbol}
-                        </button>
-                    ))}
-                </div>
-                <br></br>
-                <h5>Throughout the day, how much have you felt negative, upset or distressed?</h5>
-                <div style={{ display: "flex", justifyContent: "center", gap: "1rem", margin: "1rem 0" }}>
-                    {negativeEmojis.map((emoji) => (
-                        <button
-                            key={emoji.id}
-                            type="button"
-                            onClick={() => handleNegativeSelect(emoji)}
-                                style={{
-                                fontSize: "2rem",   
-                                padding: "0.5rem",
-                                border: selectedEmojis.negative?.id === emoji.id ? "2px solid blue" : "1px solid gray",
-                                borderRadius: "50%",
-                                background: selectedEmojis.negative?.id === emoji.id ? "#e0f7fa" : "#fff",
                                 cursor: "pointer",
                             }}
                             aria-label={emoji.label}
