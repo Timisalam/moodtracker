@@ -1,0 +1,55 @@
+/* Base styles for mobile screens */
+.signup-form {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.signup-form label {
+    display: block;
+    margin: 15px 0;
+}
+
+.signup-form span {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.signup-form input {
+    padding: 10px 8px;
+    font-size: 1em;
+    color: #777;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Enhancements for larger screens */
+@media (min-width: 600px) {
+    .signup-form {
+        max-width: 500px;
+        margin: 40px auto;
+        padding: 20px;
+    }
+
+    .signup-form label {
+        margin: 20px auto;
+    }
+
+    .signup-form input {
+        padding: 12px 8px;
+        font-size: 1.1em;
+    }
+}
+
+@media (min-width: 960px) {
+    .signup-form {
+        max-width: 600px;
+    }
+
+    .signup-form input {
+        font-size: 1.2em;
+    }
+}

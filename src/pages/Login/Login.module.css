@@ -1,0 +1,52 @@
+.login-form {
+    max-width: 100%;
+    margin: 10px auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.login-form label {
+    display: block;
+    margin: 10px auto;
+}
+
+.login-form span {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.login-form input {
+    padding: 12px 8px;
+    font-size: 1em;
+    color: #777;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (min-width: 600px) {
+    .login-form {
+        max-width: 360px;
+        margin: 40px auto;
+        padding: 20px;
+    }
+
+    .login-form label {
+        margin: 20px auto;
+    }
+
+    .login-form input {
+        padding: 10px 6px;
+        font-size: 1.1em;
+    }
+}
+
+@media (min-width: 1024px) {
+    .login-form {
+        margin: 60px auto;
+        padding: 30px;
+    }
+
+    .login-form input {
+        font-size: 1.2em;
+    }
+}

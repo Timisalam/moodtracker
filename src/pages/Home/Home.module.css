@@ -1,0 +1,102 @@
+/* Base styles for mobile screens */
+.container {
+    display: block;
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.content {
+    padding-right: 0;
+    margin-bottom: 20px;
+}
+
+.sidebar {
+    padding-left: 0;
+}
+
+.sidebar form {
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.sidebar input,
+.sidebar select {
+    display: block;
+    width: 100%;
+    padding: 12px 8px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 4px;
+    color: #555;
+    font-size: 1em;
+}
+
+.sidebar label {
+    margin: 0 0 15px;
+    display: block;
+    color: #fff;
+}
+
+.sidebar button {
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 10px;
+    background-color: transparent;
+    font-size: 1em;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+}
+
+.sidebar h3 {
+    color: #fefbfc;
+    margin-bottom: 15px;
+}
+
+.sidebar aside {
+    margin-top: 30px;
+    color: #555;
+}
+
+.sidebar aside li {
+    margin: 8px 0;
+}
+
+
+
+/* Enhancements for larger screens */
+@media (min-width: 600px) {
+    .container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        max-width: 600px;
+        padding: 0;
+    }
+
+    .content {
+        padding-right: 20px;
+        margin-bottom: 0;
+    }
+
+    .sidebar {
+        padding-left: 20px;
+    }
+
+    
+}
+
+@media (min-width: 960px) {
+    .container {
+        max-width: 960px;
+        margin: 40px auto;
+    }
+
+    .sidebar form {
+        padding: 20px;
+    }
+
+}

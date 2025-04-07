@@ -1,0 +1,73 @@
+/* Base styles for mobile screens */
+.theme-selector {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.theme-buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.theme-buttons div {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin: 0 8px;
+    border-radius: 50%;
+}
+
+.mode-toggle {
+    margin-right: auto;
+    text-align: center;
+}
+
+.mode-toggle img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+/* Enhancements for larger screens */
+@media (min-width: 600px) {
+    .theme-selector {
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        margin: 20px auto;
+        padding: 0;
+        max-width: 600px;
+    }
+
+    .theme-buttons {
+        margin-top: 0;
+        justify-content: flex-start;
+    }
+
+    .mode-toggle {
+        margin-right: auto;
+        text-align: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .theme-selector {
+        max-width: 960px;
+    }
+
+    .theme-buttons div {
+        margin-left: 15px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .theme-selector {
+        max-width: 1200px;
+    }
+}
