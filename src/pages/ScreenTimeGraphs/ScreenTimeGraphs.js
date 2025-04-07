@@ -77,6 +77,15 @@ export default function ScreenTimeGraphs() {
         borderColor: "#ccc"
     };
 
+
+    function displayData(data) {
+        return data.map(d => ({
+            ...d,
+            averageScreenTime: d.averageAmount
+        })
+        )
+    }
+
     return (
         <>
             <div className={styles.chartWrapper}>
@@ -84,14 +93,14 @@ export default function ScreenTimeGraphs() {
                 <ResponsiveContainer width="100%" height={400}>
                     <ScatterChart margin={{ top: 20, right: 30, bottom: 20, left: 20 }}>
                         <CartesianGrid strokeDasharray="3 3" stroke="#ddd" />
-                        <XAxis 
-                            dataKey="amount" 
-                            name="Screen Time" 
+                        <XAxis
+                            dataKey="amount"
+                            name="Screen Time"
                             unit="h"
                             stroke="#444"
                             type="number"
                         />
-                        <YAxis 
+                        <YAxis
                             dataKey="positiveActivation"
                             name="Mood"
                             domain={[1, 5]}
@@ -99,7 +108,13 @@ export default function ScreenTimeGraphs() {
                             tickFormatter={formatYAxisTick}
                             stroke="#444"
                         />
-                        <Scatter data={jitteredData} fill="#FF6B6B" r={5} />
+                        <Scatter
+                            data={jitteredData}
+                            fill="#FF6B6B"
+                            r={12}
+                            stroke="#fff"
+                            strokeWidth={2}
+                        />
                     </ScatterChart>
                 </ResponsiveContainer>
             </div>
@@ -109,14 +124,14 @@ export default function ScreenTimeGraphs() {
                 <ResponsiveContainer width="100%" height={400}>
                     <ScatterChart margin={{ top: 20, right: 30, bottom: 20, left: 20 }}>
                         <CartesianGrid strokeDasharray="3 3" stroke="#ddd" />
-                        <XAxis 
-                            dataKey="amount" 
+                        <XAxis
+                            dataKey="amount"
                             name="Screen Time"
                             unit="h"
                             stroke="#444"
                             type="number"
                         />
-                        <YAxis 
+                        <YAxis
                             dataKey="sleepQuality"
                             name="Sleep Quality"
                             domain={[1, 5]}
@@ -124,21 +139,26 @@ export default function ScreenTimeGraphs() {
                             tickFormatter={formatYAxisTick}
                             stroke="#444"
                         />
-                        <Scatter data={jitteredData} fill="#4D96FF" r={5} />
-                    </ScatterChart>
+                        <Scatter
+                            data={jitteredData}
+                            fill="#FF6B6B"
+                            r={12}
+                            stroke="#fff"
+                            strokeWidth={2}
+                        />                      </ScatterChart>
                 </ResponsiveContainer>
             </div>
 
             <div className={styles.chartWrapper}>
                 <p className={styles.chartTitle}>Mood vs Avg Screentime</p>
                 <ResponsiveContainer width="100%" height={400}>
-                    <BarChart data={moodData}>
+                    <BarChart data={displayData(moodData)}>
                         <CartesianGrid strokeDasharray="3 3" stroke="#eee" />
                         <XAxis dataKey="positiveActivation" />
                         <YAxis />
                         <Tooltip contentStyle={tooltipStyle} />
                         <Legend />
-                        <Bar dataKey="averageAmount" fill="#FFB74D" />
+                        <Bar dataKey="averageScreenTime" fill="#FFB74D" />
                     </BarChart>
                 </ResponsiveContainer>
             </div>
@@ -146,13 +166,13 @@ export default function ScreenTimeGraphs() {
             <div className={styles.chartWrapper}>
                 <p className={styles.chartTitle}>Sleep Quality vs Avg Screentime</p>
                 <ResponsiveContainer width="100%" height={400}>
-                    <BarChart data={sleepData}>
+                    <BarChart data={displayData(sleepData)}>
                         <CartesianGrid strokeDasharray="3 3" stroke="#eee" />
                         <XAxis dataKey="sleepQuality" />
                         <YAxis />
                         <Tooltip contentStyle={tooltipStyle} />
                         <Legend />
-                        <Bar dataKey="averageAmount" fill="#4FC3F7" />
+                        <Bar dataKey="averageScreenTime" fill="#4FC3F7" />
                     </BarChart>
                 </ResponsiveContainer>
             </div>
