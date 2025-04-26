@@ -26,17 +26,14 @@ export const useFirestore = (collectionName) => {
     const [response, dispatch] = useReducer(firestoreReducer, initialState);
     const [isCancelled, setIsCancelled] = useState(false);
 
-    // Collection reference
     const ref = collection(projectFireStore, collectionName);
 
-    // Only dispatch if not cancelled
     const dispatchIfNotCancelled = (action) => {
         if (!isCancelled) {
             dispatch(action);
         }
     };
 
-    // Add a document
     const addDocument = async (doc) => {
         dispatch({ type: "IS_PENDING" });
 

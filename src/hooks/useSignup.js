@@ -13,14 +13,12 @@ export const useSignup = () => {
         setIsPending(true)
 
         try {
-            //signup user
             const res = await createUserWithEmailAndPassword(projectAuth,email, password)
 
             if(!res){
                 throw new Error('Could not complete signup')
             }
 
-            //add display name to user
             await updateProfile(res.user, { displayName });
 
 

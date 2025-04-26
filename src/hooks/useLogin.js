@@ -14,15 +14,11 @@ export const useLogin = () => {
         setIsPending(true);
 
         try {
-            // Initialize the Firebase Auth instance
 
-            // Use signInWithEmailAndPassword with the auth instance
             const res = await signInWithEmailAndPassword(projectAuth, email, password);
 
-            // Dispatch login action
             dispatch({ type: "LOGIN", payload: res.user });
 
-            // Update state
             if (!isCancelled) {
                 setIsPending(false);
                 setError(null);

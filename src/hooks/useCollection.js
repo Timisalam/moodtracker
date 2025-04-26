@@ -6,25 +6,20 @@ export const useCollection = (collectionName, _query, _orderBy) => {
     const [documents, setDocuments] = useState(null);
     const [error, setError] = useState(null);
 
-    // Use refs to avoid infinite loop
     const queryRef = useRef(_query).current;
     const orderByRef = useRef(_orderBy).current;
 
     useEffect(() => {
-        // Start with the collection reference
         let ref = collection(projectFireStore, collectionName);
 
-        // Apply query if provided
         if (queryRef) {
-            ref = query(ref, where(...queryRef)); // Use `query` to apply filters
+            ref = query(ref, where(...queryRef)); 
         }
 
-        // Apply ordering if provided
         if (orderByRef) {
-            ref = query(ref, orderBy(...orderByRef)); // Use `query` to apply ordering
+            ref = query(ref, orderBy(...orderByRef)); 
         }
 
-        // Fetch data with `onSnapshot` listener
         const unsubscribe = onSnapshot(ref, (snapshot) => {
             let results = [];
             snapshot.docs.forEach((doc) => {
@@ -38,7 +33,6 @@ export const useCollection = (collectionName, _query, _orderBy) => {
             setError("Could not fetch data");
         });
 
-        // Cleanup listener on component unmount
         return () => unsubscribe();
     }, [collectionName, queryRef, orderByRef]);
 

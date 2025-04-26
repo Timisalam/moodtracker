@@ -1,4 +1,3 @@
-/* Base styles for mobile screens */
 .container {
     display: block;
     max-width: 100%;
@@ -68,7 +67,6 @@
 
 
 
-/* Enhancements for larger screens */
 @media (min-width: 600px) {
     .container {
         display: grid;

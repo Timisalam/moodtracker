@@ -70,41 +70,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 
-/ need to figure out a way to analyse user data to make suggesitons such as you tend to sleep better when you spend 4 hours or less on your phone
-// need to figure out how to do user testing
+Login in credentials -
 
+email - timisalam@gmail.com
+password - 12345678
 
+email - rosskav@gmail.com
+password-  halfnut
 
-
-
-// user testing
-// show person a b and c
-// It is easy to see their habits based on graphs
-// ui is simple enough to use and understand
-// ask if incoporation of emmojis make it eaier to understand
-// are the insights helpful
-// describe the application in one word
-//find scales for ui
-
-
-///test of each persona escpecially bad screentime
-
-
-// start making paper
-// every design choice backed by literature and back it in your report
-// focus on your graphs 
-// add interview schedule to report i.e the questions I asked 
-
-
-
-//goal of report is descirbe problen how my app solves it and how i designed the app to solve it 
-
-
-
-//go more in depth ni nackagorund for report
-
-
-// reference back to background in other parts of paper
-// add more refeerneces to background
-
-// do this why did youy do this? reference reference reference
+email - legoat@gmail.com
+password - legoat

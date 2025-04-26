@@ -3,7 +3,6 @@ import { useLogout } from '../hooks/useLogout'
 import { useAuthContext } from '../hooks/useAuthContext';
 import { useThemeContext } from '../hooks/useThemeContext';
 
-//css
 import styles from './Navbar.module.css'
 
 

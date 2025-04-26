@@ -1,4 +1,3 @@
-/* Base styles for mobile screens */
 .signup-form {
     max-width: 100%;
     margin: 20px auto;
@@ -26,7 +25,6 @@
     border-radius: 4px;
 }
 
-/* Enhancements for larger screens */
 @media (min-width: 600px) {
     .signup-form {
         max-width: 500px;

@@ -35,9 +35,10 @@ export default function Insights() {
             const sleepQuality = sleepQualityArr[index];
             const mood = moodArr[index];
 
-            const goodMood = mood >= 3 ? 1 : 0; // Mood above or equal to average is considered good
-            data.push([screentime, sleepQuality]); // Features
-            labels.push(goodMood); // Target label
+        // Mood above or equal to average is considered good
+            const goodMood = mood >= 3 ? 1 : 0; 
+            data.push([screentime, sleepQuality]); 
+            labels.push(goodMood); 
         });
 
         return { data, labels, screentimeMean, sleepQualityMean, moodMean };
@@ -115,7 +116,7 @@ export default function Insights() {
             feedbackMessage = "Need more data to analyse trends accurately";
 
         }
-        // take in inpit for today and if they are better than avaerage commend user    
+        // take in input for today and if they are better than average commend user    
         setFeedback(feedbackMessage);
         console.log(feedbackMessage);
 
@@ -143,10 +144,6 @@ export default function Insights() {
             }
         }
     }, [documents, isLoading]);
-
-    useEffect(() => {
-        console.log('Updated feedback:', feedback);
-    }, [feedback]);
 
     if (isLoading) return <p>Loading...</p>;
     if (error) return <p>Error fetching data: {error.message}</p>;

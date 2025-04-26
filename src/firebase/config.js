@@ -1,4 +1,3 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore, Timestamp } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
@@ -12,14 +11,11 @@ const firebaseConfig = {
     appId: "1:685099745581:web:074c53cc0aeabde78153a4"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// Initialize services
 const projectFireStore = getFirestore(app);
 const projectAuth = getAuth(app);
 
-// Get timestamp
 const timestamp = Timestamp;
 
 export { projectFireStore, projectAuth, timestamp };

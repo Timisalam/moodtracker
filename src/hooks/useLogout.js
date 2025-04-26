@@ -13,17 +13,14 @@ export const useLogout = () => {
         setError(null)
         setIsPending(true)
 
-        //sign user out
 
 
         try {
             await signOut(projectAuth);
 
-            //dispatch logout action
 
             dispatch({ type: 'LOGOUT' })
 
-            //update state
             if (!isCancelled) {
                 setIsPending(false)
                 setError(null)

@@ -26,9 +26,7 @@ export default function ScreenTimeForm({ uid }) {
         { id: 4, symbol: "😊", label: "Good" },
         { id: 5, symbol: "😄", label: "Great" },
     ];
-  
     
-    //IMPROVE THIS FUNCTION
     const isValidDocument = () =>{
         const todaysDate = new Date();
         for(var i =0; i < documents.length;i++){
@@ -56,7 +54,7 @@ export default function ScreenTimeForm({ uid }) {
     const handleSubmit = (e) => {
         e.preventDefault();
         isValidDocument();
-        if(/*!hasSubmittedToday &&*/ filledForm){
+        if(!hasSubmittedToday && filledForm){
             addDocument({
                 amount,
                 positiveActivation:selectedEmojis.positive.id,
